@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>A-Frame Demo</title>
-    <meta name="description" content="A-Frame Demo">
+    <meta name="description" content="SeniorDesignRoom">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.16.2/dist/aframe-extras.js"></script>
 </head>
@@ -13,21 +13,20 @@
     <a-scene physics>
 
         <a-assets>
-            <img id="carpet" src="img/carpet3.PNG">
+            <img id="carpet" src="img/carpet.PNG" />
             <img id="cardGamePic" src="img/VRCardGamePic" />
             <img id="soundBoard" src="img/wallFuzz" />
             <video id="VRVid" autoplay-loop="true" src="img/VRCardGameVideo.mp4" />
+
         </a-assets>
 
         <!-- Floor works-->
         <a-plane src="#carpet" repeat="40 40" height="40" width="40" rotation="-90 0 0" static-body></a-plane>
 
-        <!-- Color is pretty good. Isn't placed properly, work on this piece Wednesday.-->
-        <!-- Placed 5 feet off the ground because the wall is 10 feet high and centers on the center.-->
-        <!-- Placed 20 feet out because the floor is 30 feet wide.-->
+        <!-- Walls are placed 5 feet off the ground because the wall is 10 feet high and centers on the center.-->
+        <!-- Walls are placed 20 feet out because the floor is 40 feet wide.-->
         <!-- Direction of wall in relation to starting position-->
-
-        <!-- "North wall"-->
+        <!-- North wall-->
         <a-plane color="#9999AA" height="1.5" width="40" rotation="0 0 0" position="0 0.5 -20" static-body></a-plane>
         <a-plane color="#9999AA" height="4" width="40" rotation="0 0 0" position="0 8 -20" static-body></a-plane>
         <a-plane color="#9999AA" height="10" width="12" rotation="0 0 0" position="14 5 -20" static-body></a-plane>
@@ -35,7 +34,7 @@
         <a-plane color="#EFEBD6" height="10" width="40" rotation="0 0 0" position="0 15 -20" static-body></a-plane>
 
 
-        <!-- "East facing short wall"-->
+        <!-- East facing short wall-->
         <a-plane color="#9999AA" height="10" width="4" rotation="0 90 0" position="-8 5 -18" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="4" rotation="0 90 0" position="-8 15 -18" static-body></a-plane>
 
@@ -45,27 +44,27 @@
         <a-plane color="#EFEBD6" height="10" width="12" rotation="0 0 0" position="-14 15 -16" static-body></a-plane>
 
 
-        <!-- "South wall"-->
+        <!-- South wall-->
         <a-plane color="#9999AA" height="10" width="40" rotation="0 180 0" position="0 5 20" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="40" rotation="0 180 0" position="0 15 20" static-body></a-plane>
 
 
-        <!-- "East wall"-->
+        <!-- East wall-->
         <a-plane color="#9999AA" height="10" width="40" rotation="0 -90 0" position="20 5 0" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="40" rotation="0 -90 0" position="20 15 0" static-body></a-plane>
 
 
-        <!-- "East wall jutted out"-->
+        <!-- East wall jutted out-->
         <a-plane color="#9999AA" height="10" width="24" rotation="0 -90 0" position="10 5 8" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="24" rotation="0 -90 0" position="10 15 8" static-body></a-plane>
 
 
-        <!-- "North facing short wall"-->
+        <!-- North facing short wall-->
         <a-plane color="#9999AA" height="10" width="10" rotation="0 180 0" position="15 5 -4" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="10" rotation="0 180 0" position="15 15 -4" static-body></a-plane>
 
 
-        <!-- "West wall"-->
+        <!-- West wall-->
         <a-plane color="#9999AA" height="10" width="40" rotation="0 90 0" position="-20 5 0" static-body></a-plane>
         <a-plane color="#EFEBD6" height="10" width="40" rotation="0 90 0" position="-20 15 0" static-body></a-plane>
 
@@ -83,8 +82,8 @@
         <a-box src="#soundBoard" material="metalness:0 roughness:1" height="6" width="8" depth="0.5" rotation="0 90 0" position="-20 7 11" static-body></a-box>
 
         <!-- Thin box that cancels sound - East wall jutted out  -->
-        <a-box src="#soundBoard" height="6" width="8" depth="0.5" rotation="0 90 0" position="10 7 4" static-body></a-box>
-        <a-box src="#soundBoard" height="6" width="8" depth="0.5" rotation="0 90 0" position="10 7 12" static-body></a-box>
+        <a-box src="#soundBoard" material="metalness:0 roughness:1" height="6" width="8" depth="0.5" rotation="0 90 0" position="10 7 4" static-body></a-box>
+        <a-box src="#soundBoard" material="metalness:0 roughness:1" height="6" width="8" depth="0.5" rotation="0 90 0" position="10 7 12" static-body></a-box>
 
         <!-- Whiteboards - Southwall, east side  -->
         <a-box color="#e0e7ee" material="metalness:1 roughness:0" height="5" width="5" depth="0.1" rotation="0 0 0" position="6 4 20" static-body></a-box>
@@ -96,37 +95,14 @@
 
         <!-- Television, screen and back cylinder - Southwall -->
         <a-box color="#000000" material="metalness:1 roughness:0" height="6" width="9" depth="0.2" rotation="-10 0 0" position="-5 8 19" static-body></a-box>
-        
-        <!---->
         <a-video src="#VRVid" material="metalness:1 roughness:0" height="5" width="8" rotation="10 180 0" position="-5 8 18.89" static-body></a-video>
         <a-cylinder color="#000000" material="metalness:1 roughtness:0" height="1" radius="0.2" rotation="90 0 0" position="-5 7.5 19.61" static-body></a-cylinder>
 
         <!-- The ceiling. -->
         <a-plane color="#EFEBD6" height="40" width="40" rotation="90 0 0" position="0 20 0" static-body></a-plane>
 
-
-        <!-- Camera works now. You've got to set the camera above the plane, else stuff likes to error for days. -->
+        <!-- Camera. You've got to set the camera above the plane, else stuff likes to error for days. -->
         <a-entity camera position="0 2 0" universal-controls kinematic-body jump-ability="enableDoubleJump: false; distance: 10;"></a-entity>
-
-
-
-
-
-        <script id="enemies" type="text/x-nunjucks-template">
-            <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
-                <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
-
-                {% for x in range(num) %}
-                <a-image class="enemy" look-at="#player" src="#enemy-sprite" transparent="true">
-                    <!-- Attach collision handler animations. -->
-                    <a-animation attribute="opacity" begin="collider-hit" dur="400"
-                                 ease="linear" from="1" to="0"></a-animation>
-                    <a-animation attribute="scale" begin="collider-hit" dur="400"
-                                 ease="linear" to="0 0 0"></a-animation>
-                </a-image>
-                {% endfor %}
-            </a-entity>
-        </script>
 
     </a-scene>
 </body>

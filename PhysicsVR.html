@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame Demo</title>
+    <meta name="description" content="PhysicsVR">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.16.2/dist/aframe-extras.js"></script>
+</head>
+<body>
+    <!-- Put any scripts here -->
+
+    <a-scene physics>
+
+        <a-assets>
+            <!--This is the place where you put images and videos to preload before the page starts.-->
+            <img id="carpet" src="imgPhy/carpet.PNG" />
+            <img id="sand" src="imgPhy/sand" />
+            <img id="rock" src="imgPhy/rock" />
+        </a-assets>
+
+        <!-- This is where the magic happens.-->
+        <!-- Camera. Protip: You've got to set the camera above the plane when using physics, else stuff likes to error for days. -->
+        <a-entity camera position="0 2 0" universal-controls kinematic-body jump-ability="distance: 3"></a-entity>
+
+        <!-- Floor.-->
+        <a-plane src="#carpet" repeat="20 20" height="20" width="20" rotation="-90 0 0" static-body></a-plane>
+
+        <!-- Immovable box -->
+        <a-box src="#rock" static-body position="0 0.5 -5" width="3" height="1" depth="1"></a-box>
+
+        <!-- Dynamic box -->
+        <a-box src="#sand" dynamic-body position="5 0.5 0" width="5" height="1" depth="5"></a-box>
+
+    </a-scene>
+</body>
+</html>
